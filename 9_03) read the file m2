@@ -1,0 +1,64 @@
+import java.util.*;
+import java.io.*;
+
+
+class rough{
+    public static void main(String args[]){
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter the file name : ");
+        String s = sc.next();
+        int n;
+
+        try{
+            FileInputStream file = new FileInputStream(s);
+            Scanner sc2 = new Scanner(file);
+
+            while( (n=file.read()) != -1){
+                System.out.print((char)n);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+    }
+}
+
+
+
+----------------------------------------sir's code ----------------------------------------------
+
+
+
+import java.io.*;
+import java.util.*;
+class fileinputstreamreadexception
+{
+public static void main(String args[])
+{
+int n;
+try
+{
+Scanner d1=new Scanner(System.in);
+String s=d1.nextLine();
+FileInputStream f1=new FileInputStream(s);
+while((n=f1.read())!=-1)
+{
+System.out.print((char)n);
+}
+/*Scanner s1=new Scanner(f1);
+while(s1.hasNextLine()) //read line-by-line hasNext() will also works
+{
+String data=s1.nextLine();
+// print the data.
+System.out.println(data);
+}*/
+}
+catch(Exception e)
+{
+System.out.println(e);
+}
+}
+}
