@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+
+
+class rough{
+    public static void main(String args[]){
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter the file name : ");
+        String s = sc.next();
+
+        try{
+
+            FileInputStream f = new FileInputStream(s);
+            Scanner sc2 = new Scanner(f); // file ni andar thi inoput le atla mate Scanner ni andar f lakhiyu
+
+            while(sc2.hasNext()){  // hasNext thi badho data vread kari sakiye
+                String k = sc2.nextLine(); // badho data String k ma store thato jashe ne print thato jashe
+                System.out.println(k);
+                
+            }
+        }
+        catch(IOException e){
+            System.out.println(e);
+        }
+
+    }
+}
