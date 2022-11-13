@@ -1,0 +1,30 @@
+import java.util.*;
+import java.io.*;
+
+class area<t>{
+    t l;
+    t b;
+
+    public void get(t l, t b){
+        this.l = l;
+        this.b = b;
+    }
+    public void ans(){
+        
+        System.out.println(l*b);
+    }
+}
+
+public class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+
+        area<Integer> a1 = new area<Integer>();
+        area<Double> a2 = new area<Double>();
+
+        a1.get(3, 4);
+        a2.get(2.5, 0.5);
+        a1.ans();
+        a2.ans();
+    }
+}
