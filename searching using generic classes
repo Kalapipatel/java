@@ -1,0 +1,73 @@
+import java.util.*;
+import java.io.*;
+
+class gen<t>{
+    int flag;
+    void search(t[] arr, t inp){
+        for(int i=0; i<arr.length ;i++){
+            if(arr[i] == inp){
+                flag++;
+            }
+        }
+        if(flag>0){
+            System.out.println("the books is available");
+        }else {
+            System.out.println("the books is not available");
+            
+        }
+    }
+}
+
+public class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter 1 or 2 : ");
+        int opt = sc.nextInt();
+        System.out.print("enter how many books you want to enter : ");
+        int n = sc.nextInt();
+        int fl = 0;
+        Integer k[] = new Integer[n]; 
+        Character c[] = new Character[n];
+
+        System.out.println("enter  the books : ");
+        if(opt == 1){
+            gen<Integer> a1 = new gen<Integer>();
+            for(int i=0; i<n; i++){
+                k[i] = sc.nextInt();
+            }
+            System.out.print("which book you want to search : ");
+            int inp1 = sc.nextInt();
+
+            a1.search(k, inp1);
+            // for(int i=0 ; i<n; i++){
+            //     if(inp1 == k[i]){
+            //         fl++;
+            //     }
+            // }
+        }
+        else if(opt == 2){
+            gen<Character> a1 = new gen<Character>();
+
+            for(int i=0; i<n; i++){
+                c[i] = sc.next().charAt(0);
+            }
+            System.out.print("which book you want to search : ");
+            char inp2 = sc.next().charAt(0);
+
+            a1.search(c, inp2);
+            // for(int i=0 ; i<n; i++){
+            //     if(inp2 == c[i]){
+            //         fl++;
+            //     }
+            // }
+        }
+
+        // if(fl>0){
+        //     System.out.println("available");
+        // }
+        // else{System.out.println("not available");}
+
+
+    }
+}
