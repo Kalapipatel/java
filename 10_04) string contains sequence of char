@@ -1,0 +1,15 @@
+import java.util.*;
+import java.io.*;
+
+class rough{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter the two string you want to compare");
+
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+
+        System.out.println(a.contains(b));
+    }
+}
