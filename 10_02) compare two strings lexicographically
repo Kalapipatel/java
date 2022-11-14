@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+
+class rough{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter the two string you want to compare");
+
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+
+        int k = a.compareTo(b);
+        System.out.println(k);
+
+        if(k < 0){
+            System.out.println(a+ " is less then "+b);
+        }
+        else if(k == 0){
+            System.out.println(a+ " is equal to "+b);
+        }
+        else if(k > 0){
+            System.out.println(a+ " is greater then "+b);
+        }
+    }
+}
