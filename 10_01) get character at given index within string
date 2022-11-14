@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+
+class rough{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        String k = "Java Exercises!";
+        int l = k.length();
+
+        System.out.print("enter the index : ");
+        int n = sc.nextInt();
+
+        if (n<l){
+            char c = k.charAt(n);
+            System.out.println(c);
+        } else{
+            System.out.println("invalid index");
+        }
+
+    }
+}
