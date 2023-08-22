@@ -1,0 +1,68 @@
+Given two positive integers ‘a’ and ‘b’(a<b), Write a PAC, pseudo code/algorithm and a Java program using USER DEFINED CLASS, OBJECT AND METHODS to compute  the squares of all the numbers greater than ‘a’ and less than ‘b’.
+
+Note: Use user defined exception handling code to check, If a is greater than b , then raise "InvalidRangeException".Else, perform the above mentioned computation.
+
+Input format:
+
+Enter the number a
+
+Enter the number b
+
+Output format
+
+Print the squares of all the numbers which are greater than a and less than b
+
+Input
+
+5
+
+11
+
+output
+
+36
+
+49
+
+64
+
+81
+
+100
+
+
+-----------------------------------------------------------------------------------------------
+import java.util.*;
+
+class InvalidRangeException extends Exception{
+    InvalidRangeException(String s){
+        super(s);
+    }
+}
+
+class Main{
+        
+
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        try{
+            if(a > b){
+            throw new Exception("InvalidRangeException");
+        }
+        else{
+            for(int i=a+1; i<b; i++){
+                int k = i*i;
+                System.out.println(k);
+            }
+        }
+        }
+        catch(Exception e){
+            System.out.println(e);
+            
+        }
+    }
+}
