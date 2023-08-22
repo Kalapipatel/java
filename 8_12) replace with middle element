@@ -1,0 +1,87 @@
+IPS-19
+Write a PAC, Pseudocode/Algorithm and a Java program to perform the following:
+
+ 
+
+(i) Read a 3x3 matrix of unsorted values.If the size is not 3x3 then print "invalid" and terminate from the program.Else perform the steps from  (ii) to (iii).
+
+(ii) Sort the values in incresing order
+
+(iii) Replace the center of the original matrix with the median (middle) of the sorted values and print the values in a matrix format.
+
+ 
+
+For example:
+
+if the size is 3x3 and the values are
+
+4
+
+7
+
+8
+
+1
+
+2
+
+3
+
+5
+
+6
+
+7
+
+then the output matrix is
+
+478
+
+153
+
+567
+-------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+     
+        int arr[][]= new int[r][c];
+        int sort[] = new int[9];
+        int z=0;
+        
+        if(r == 3 && c == 3){
+        for(int i=0 ;i<3; i++){
+            for(int j=0 ;j<3 ;j++){
+                int a = sc.nextInt();
+                arr[i][j] = a;
+                sort[z] = a;
+                z++;
+            }
+        }
+        
+        Arrays.sort(sort);
+        arr[1][1] = sort[4];
+            
+            
+            for(int i = 0; i<r ;i++){
+                for(int j=0; j<c ;j++){
+                    System.out.print(arr[i][j]);
+                }
+                System.out.println();
+            }
+            
+        }
+        
+        else{
+           System.out.println("invalid");
+        }
+        
+        
+    }
+}
