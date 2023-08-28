@@ -1,0 +1,55 @@
+IPS-20
+A mathematician wanted to develop the Java program for calculating the mode of the array. Hence, he/she approached you for the help. As a programmer, help him/her by writing the PAC, algorithm/pseudocode and subsequent the Java program to find the mode of the integer array.
+
+Input Format:
+
+Read N numbers
+
+The next 5 lines will contain each number
+
+Output Format:
+
+The maximum occurred number line1
+
+Number of times in line 2
+
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        
+        
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int count[] = new int[n];
+        int index=0;
+        
+        for (int i=0 ;i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        for(int i =0; i<n ;i++){
+            int c = 0;
+            for(int j=i ;j<n ;j++){
+                if(arr[i] == arr[j]){
+                    c++;
+                }
+            }
+            count[i] = c;
+        }
+        int max = count[0];
+        
+        for(int i =0 ;i <n ;i++){
+            if(count[i] > max){
+                max = count[i];
+                index += i;
+            }
+        }
+        System.out.println(arr[index]);
+        System.out.println(max);
+        
+    }
+}
