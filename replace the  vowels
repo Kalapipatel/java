@@ -1,0 +1,46 @@
+IPS-24
+Write a PAC, Pseudocode/Algorithm and a Java program for the below problem:
+
+In a country, people believe that having vowels in their names brings bad luck. More the number of vowels, more is the bad luck.
+So, they mention their names without vowels by replacing them with the next character of vowel (ie., a is replaced as b, e is replaced as f and so on). 
+Given a name, display the new name after replacement and the level (count) of bad luck.
+
+For example, the name rajkumar is changed to rbjkvmbr and the level is 3.
+
+ 
+Note: Consider the input string as lowercase.
+
+
+
+Input
+rajkumar
+Expected output
+rbjkvmbr
+3
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc  = new Scanner(System.in);
+        
+        int count = 0;
+        String s = sc.next();
+        
+        for(int i=0 ;i< s.length() ;i++){
+            char c = s.charAt(i);
+            if(c == 'a' || c == 'e' ||c == 'i' ||c == 'o' ||c == 'u'){
+                int k = (int) c;
+                k++;
+                c = (char) k;
+                count++;
+            }
+            System.out.print(c);
+        }
+        
+        System.out.println();
+        System.out.println(count);
+    }
+}
