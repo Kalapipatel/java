@@ -1,0 +1,40 @@
+IPS-21
+Write a PAC,Pseudocode/Algorithm and a Java program to read a 3x3 matrix.Perform the following sequence of operations:
+
+1.Sort the elements of 3x3 in ascending order.
+
+2.After sorting, replace the middle value with the input matrix (original matrix) and display the resultant matrix.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int arr[][] = new int[3][3];
+        int s[] = new int[9];
+        int k = 0;
+        
+        for(int i =0; i<3; i++){
+            for(int j =0; j<3 ; j++){
+                int a = sc.nextInt();
+                arr[i][j] = a;
+                s[k] = a;
+                k++;
+            }
+        }
+        
+       
+        Arrays.sort(s);
+        arr[1][1] = s[4];
+        
+        for(int i =0; i<3; i++){
+            for(int j =0; j<3 ; j++){
+                System.out.println(arr[i][j]);
+            }
+        }
+        
+    }
+}
