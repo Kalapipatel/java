@@ -1,0 +1,96 @@
+IPS:-32
+Let L={x1,x2,…,xn} be a array of n elements. Let us search for a key K in the array L. If the key is presented in the array L then partition 
+the array L into disjoint ordered arrays L1 and L2 such that
+
+L1={x:xεL such that x≤K} and L2={y:yεL such that y>K}. If the key is not present in the array output is “empty”. Write a PAC, algorithm/pseudocode 
+and subsequent Java program for your algorithm to compute arrays L1 and L2   for the given array L and key K. 
+Note: Don’t use any inbuilt functions in your program such as sort , in
+
+Example1: If L={16, 15, 1, 27, 19, 100, 200,3} and key k= 27 then L1={1,3,15,16,19,27} and L2={100,200}.
+
+Example 2: If L={16, 15, 1, 27, 19, 100, 200,3} and key k= 127 then empty.
+
+Input format
+
+Enter the list size n
+
+Enter the n numbers
+
+ Enter the key value
+
+Output
+
+Partition of array
+
+
+
+
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int flag=0;
+        int pos=0;
+        
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        for(int i=0; i<n; i++){
+            for(int j=0 ;j<n; j++){
+                if(arr[i] < arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        
+        
+        int k = sc.nextInt();
+        
+        for(int i=0; i<n; i++){
+            if(arr[i] == k){
+            
+                pos += i;
+                flag = 1;
+            }
+            
+            
+        }
+        //System.out.println(pos);
+        //System.out.println(flag);
+        
+        if(flag == 1){
+            
+            int z = pos+1;
+            int arr1[] = new int[z];
+            int arr2[] = new int[n-z];
+        
+            for(int i=0; i<pos+1; i++){
+                arr1[i] = arr[i] ;
+                System.out.print(arr1[i]+" ");
+            }
+        
+            System.out.println();
+            
+            for(int i=0; i<(n-pos-1); i++){
+                arr2[i] = arr[z+i] ;
+                System.out.print(arr2[i]+" ");
+            }
+        
+        }
+        else{
+            //System.out.println(flag);
+            //System.out.println(pos);
+            System.out.println("empty");
+        }
+        
+    }
+}
