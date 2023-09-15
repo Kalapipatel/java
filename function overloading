@@ -1,0 +1,99 @@
+PAT:-4
+XYZ software company has recently revised the salary structure of all the employees. The employees of the company are broadly categorized into two groups namely Project Managers and System Engineers.
+
+Get the Basic pay and apply the allowances such as Additional Grade Pay (40% AGP), Dearness allowances (80% DA), Travel Allowances (20% TA) and House Rental allowances (40% HRA) based on the below 2 options.
+
+Using a switch-case to get the options for Project Manager (Case-1) and System Engineer (Case-2). Print "Invalid" for any other case options.
+
+Else compute the salary for Project Manager and System Engineer where,
+
+• Project Manager enjoys all the allowances offered by the company along with basic pay except TA.
+
+• System Engineer gets only basic pay and TA.
+
+Incorporate this salary scheme in a Java Program through a method or function overloading concept to calculate the salary for the employees in the company.Also, write PAC, pseudocode/Algorithm for this problem.
+
+Input Format:
+
+Basic pay
+
+Option value (Either 1 or 2)
+
+Output Format:
+
+Total salary
+
+--------------------------------------------------------------------------------------------
+
+pseudocode:
+
+step 1:
+read basic pay(np)
+
+step 2:
+read choise(choise)
+
+step 3:
+make a class called revised for revised salary calculation
+
+step 4:
+make 1 method called salary which calculated revised salary of the employee
+
+step 5:
+give different parameters for function overloading
+then call the function according to cases
+
+step 6:
+if case 1 --> then print the salary of project managers
+salary = bp + (bp*agp) + (bp*da) + (bp*hra);
+else if case 2 --> then print the salaey of system engineers
+salary = bp + (bp * ta)
+
+step 7:
+display the revised salary
+
+
+--------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+           
+        int bp = sc.nextInt();
+        int choice = sc.nextInt();
+        
+        double agp=(0.4);
+        double da=(0.8 );
+        double ta=(0.2);
+        double hra=(0.4);
+        revised s = new revised();
+        
+        switch(choice){
+            case 1: s.salary(bp,agp,da,hra);
+                break;
+            case 2: s.salary(bp,ta);
+                break; 
+            default:
+                System.out.println("Invalid");
+        }
+        
+    }
+}
+
+class revised{
+    
+    // called different parameters in same function which is called overloading
+    void salary(int bp, double agp, double da, double hra){
+        double k = bp + (bp*agp) + (bp*da) + (bp*hra);
+        System.out.format("%.1f",k);
+    }
+    
+    void salary(int bp, double ta){
+        double k = bp + (bp*ta);
+        System.out.format("%.1f",k);
+    }
+    
+}
