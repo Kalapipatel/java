@@ -1,0 +1,113 @@
+/*
+IPS-9
+Write PAC, algorithm/pseudocode and Java program using USER DEFINED CLASS, OBJECT AND METHODS for the following scenario:
+
+Assume that you have been assigned to develop a Java program to automate process of your university library for the below requirements.
+
+A student has to enter his register number and number of books in his account (books_taken) where register number and books taken are integers. A student can be issued books or a student can return books by entering 1 or 2 respectively. However, a student can have maximum 10 books only in his account (i.e., maximum books_taken can be 10 only).
+
+If a student chooses 1 for book issue, he has to input the number of books to be issued and display the upadetd books_taken. Books issued will be added to books_taken in his account only if the total of books_taken and number of books to be issued is less than are equal to 10. If the total of books_taken and number of books to be issued exceeding 10 then display “Full”.
+
+Ex:
+
+case 1: books_taken =5, no_books_issued=3, Now total books_taken=5+3=8 Since 8<10 books_taken =8
+
+case 2: books_taken =5, no_books_issued=10, Now total books_taken=5+10=15 Since 15<10 is false books_taken will be 5 only and an error message “Full” has to be displayed.
+
+When a student chooses 2 for return of books, he has to enter how many books has to be returned. Display the updated books_taken after book return. Book to be returned will be deducted from the books_taken only if the number of books to be returned is lesser than or equal to books_taken. If the number of books to be returned is greater than books_taken then display the error message “Invalid”.
+
+Ex:
+
+case 1: books_taken =5, no_books_returned=3, Now total books_taken=5-3=2 Since 3<5 books_taken =2
+
+case 2: books_taken =5, no_books_returned=10, Since 10<5 is false books_taken will be 5 only and an error message “Invalid” has to be displayed.
+
+ 
+
+Input:
+
+regno int
+
+books_taken int
+
+choice (1 issue, 2 return)
+
+no of books to be issued or no of books to return
+
+Output:
+
+updated_book_taken or Full or Invalid
+
+ 
+
+Example:
+
+Input:
+
+101
+
+8
+
+1
+
+2
+
+Output:
+
+10
+*/
+
+----------------------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+
+class student{
+    Scanner sc = new Scanner(System.in);
+    int regno;
+    int books_taken;
+    int choice;
+    int newbooks;
+    int totalbook;
+    
+    
+    public void check(){
+        
+        if(choice == 1){
+            totalbook = books_taken + newbooks;
+        }
+        if(choice == 2){
+            totalbook = books_taken - newbooks;
+        }
+    }
+    public void fullornot(){
+        
+        if(totalbook > 10){
+            System.out.println("Full");
+        }
+        else if(totalbook > 0 && totalbook<=10){
+            System.out.println(totalbook);
+        }
+        else{
+            System.out.println("Invalid");
+        }
+    }
+    
+}
+
+
+class Main{
+    public static void main(String args[]){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        student s1 = new student();
+        s1.regno = sc.nextInt();
+        s1.books_taken = sc.nextInt();
+        s1.choice = sc.nextInt();
+        s1.newbooks = sc.nextInt();
+        
+        s1.check();
+        s1.fullornot();
+    }
+}
