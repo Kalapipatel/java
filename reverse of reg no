@@ -1,0 +1,43 @@
+IPS-26
+Write a PAC, Pseudocode/Algorithm and a Java Program for the below problem:
+
+Every student in VIT has a unique 9 digit register number containing three parts (year, branch and number) such as 21BCE1034. Reverse each part of the register number and generate a new phrase that denotes the student’s password to login to Vtop. Print “Invalid” if the register number is not of 9-digits.
+
+Input
+21BCE1034
+Expected output
+12ECB4301
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        String s = sc.next();
+        
+        int k = s.length();
+        
+            for(int i=1; i>=0; i--){
+                char c = s.charAt(i);
+                System.out.print(c);
+            }
+            for(int i=4; i>=2; i--){
+                char c = s.charAt(i);
+                System.out.print(c);
+            }
+            for(int i=8; i>=5; i--){
+                char c = s.charAt(i);
+                System.out.print(c);
+            }
+
+        if(k != 9){
+            System.out.println("Invalid");
+        }
+        
+    }
+}
