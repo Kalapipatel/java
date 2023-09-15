@@ -1,0 +1,36 @@
+Position in arrays – CT2
+Write a PAC, Pseudocode/Algorithm and a Java program to implement the below problem:
+
+Given the value of ‘n’ distinct integers, create two arrays based on the number of integers (‘n’). If the ‘n’ is even, then form the first array 
+with the first n/2 integers and the second array with the remaining elements. If ‘n’ is odd, then form the first array with first (n/2+1) integers 
+and second array with the remaining elements.
+
+Sort both the arrays in an ascending order separately and name the first sorted array as A and the second sorted array as B. Merge both the arrays A and B, 
+and create a new array called C such that all the elements of A & B are in C and the elements are in an ascending order.
+
+Read a number k, check and display whether k is present in the array A or B, the position of k in A (or B) and the position of k in C. If k is not 
+present in any of the arrays A or B, your code should output -1.
+
+Input format :
+
+Enter the number of numbers: n
+
+Enter the first number
+
+Enter the second number :
+
+.....
+
+Enter the n-th number
+
+Enter the number to be checked : k
+
+ 
+
+Output format :
+
+Print  A if k is present in A or print B is present in the array B or print -1 if k is not present in both the arrays A & B
+
+Print the position of k in the array A (or B)
+
+Print the position of k in the array C
