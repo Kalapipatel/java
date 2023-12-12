@@ -1,3 +1,4 @@
+/*
 IPS-23
 You have been assigned to find the addition of similarities of the string with each of its suffixes. Note: Consider the input string is also one of the suffixes.
 
@@ -21,7 +22,7 @@ rajrajkumar
 Expected output
 15
 
-
+*/
 
 ============================================================================================================================================================
 
