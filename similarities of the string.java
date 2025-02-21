@@ -79,3 +79,37 @@ class rough2{
         System.out.println(count);
     }
 }
+
+
+
+// ------------------------------------------------  updated function  --------------------------------------------
+// gives output as 18 because there is 3 more similarities in the substrings
+// r in jkumar
+// r in umar
+// a in mar
+// these 3 extra similarites not found in the above code
+// and actually at the time, sir is also wrong hahaa.....
+
+public static int count(String s) {
+        int sum = s.length();
+        int len = s.length();
+
+        for (int i = 1; i < s.length(); i++) {
+            String temp = s.substring(i, len);
+
+            for (int j = 0; j < len - i; j++) {
+                // System.out.println(s.charAt(j) + " " + temp.charAt(j));
+                if (s.charAt(j) == temp.charAt(j)) {
+                    sum += 1;
+                }
+
+            }
+            System.out.println(s);
+            System.out.println(temp);
+            System.out.println(sum);
+            System.out.println();
+
+        }
+
+        return sum;
+    }
